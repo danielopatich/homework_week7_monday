@@ -1,35 +1,27 @@
 import React, { PropTypes } from 'react';
-import jQuery from 'jquery';
 import TodoItem from './todo-item';
 
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      hasLoaded: false,
-      todos: []
-    }
+    this.updateTodo = this.updateTodo.bind(this);
   }
-  componentDidMount() {
-    jQuery.ajax('http://tiny-starburst.herokuapp.com/collections/todos')
-          .then( response => {
-            this.setState({
-              hasLoaded: true,
-              todos: response
-            });
-          })
+
+  handleUpdate() {
+    console.log('called the update todo function');
   }
 
   render () {
-    if (this.state.todos.length && !this.state.hasLoaded) {
+    if (!this.props.todos.length && !this.props.hasLoaded) {
       return <div>Loading...</div>
     }
-    let todos = this.state.todos.map(todo =>{
+    let todos = this.props.todos.map(todo =>{
       return <TodoItem key={todo.id}
                  completed={todo.completed}
                       text={todo.text}
-                    todoId={todo.id}/>
+                    todoId={todo.id}
+              handleUpdate={todo.handleUpdate}/>
     });
     return (
       <ul>
