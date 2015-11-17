@@ -5,7 +5,12 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updateTodo = this.updateTodo.bind(this);
+    this.handleCompleted = this.handleCompleted.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+
+  handleCompleted() {
+    console.log('called the completed todo function');
   }
 
   handleUpdate() {
@@ -17,7 +22,7 @@ class TodoList extends React.Component {
       return <div>Loading...</div>
     }
     let todos = this.props.todos.map(todo =>{
-      return <TodoItem key={todo.id}
+      return <TodoItem key={todo._id}
                  completed={todo.completed}
                       text={todo.text}
                     todoId={todo.id}

@@ -4,7 +4,6 @@ import jQuery from 'jquery';
 class Add extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
@@ -15,8 +14,8 @@ class Add extends React.Component {
     if (key === ENTER_KEY) {
       let task = this.refs.task.value;
       this.saveTask(task);
-    }
       this.refs.task.value ='';
+    }
   }
 
   saveTask(task) {
