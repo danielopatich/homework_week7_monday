@@ -67,3 +67,4 @@ Temporary Items
 
 # App specific
 dist/
+src/js/token.js

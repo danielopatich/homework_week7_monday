@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import jQuery from 'jquery';
 
-import $ from "./jQuery";
-
 import RepoFeed from './repo_feed';
+import token from './token'
 
 
 
@@ -23,7 +22,7 @@ class App extends React.Component {
 
   componentDidMount() {
     jQuery.ajax('https://api.github.com/users/danielopatich/repos')
-      .then( repsonse => {
+      .then( response => {
         this.setState({
           repos: response
         });
@@ -34,16 +33,14 @@ class App extends React.Component {
 
   render () {
     return (
-      <main>
-        <RepoFeed repos={this.state.repos}/>
-      </main>
+      <RepoFeed repos={this.state.repos}/>
     )
   }
 }
 
 
 ReactDOM.render(
-  <RepoFeed/>,
+  <App/>,
   document.getElementById('app')
 );
 

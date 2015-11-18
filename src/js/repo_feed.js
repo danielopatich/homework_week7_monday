@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import Repo from './repo';
 
+
 class RepoFeed extends React.Component {
   constructor(props) {
     super(props);
@@ -13,12 +14,13 @@ class RepoFeed extends React.Component {
   render () {
     let repos = this.props.repos.map(repo =>{
       return (
-        <Repo url={repos.name}
-          created={repos.created_at}/>
+        <Repo key={repo.id}
+             repo={repo.name}/>
       )
     });
+
     return (
-      <ul>
+      <ul className="repoFeed">
         {repos}
       </ul>
     )
