@@ -6,7 +6,104 @@
   </head>
   <body>
 
-    <h1>hello</h1>
+    <header>
+      <nav>
+        <span class="mega-octicon octicon-mark-github"></span>
+        <input class="topSearch" type="text" name="name" value="" placeholder="Search GitHub">
+        <ul class="headerNavMiddle">
+          <a href="#">Pull Requests</a>
+          <a href="#">Issues</a>
+          <a href="#">Gist</a>
+        </ul>
+        <ul class="headerNavRight">
+          <a href="#" class="octicon octicon-bell"></a>
+          <a href="#" class="octicon octicon-plus"></a>
+          <a href="#" class=""><img src="https://avatars3.githubusercontent.com/u/14968390?v=3&s=40" height="20px" alt="" /></a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+     <div id="wrapper">
+       <section class="content-container">
+         <div id="leftColumn">
+           <a href="#" class="avatar">
+             <img height="230" width="230 "src="https://avatars1.githubusercontent.com/u/14968390?v=3&s=460" alt="" />
+           </a>
+           <div class="profileStuff">
+           <!-- <h1>
+             <span class="nameActual">Daniel Opatich</span>
+             <span class="nameGH">danielopatich</span>
+           </h1> -->
+           <ul class="profileBio">
+             <!-- <li class="octicon octicon-organization">TIY</li>
+             <li class="octicon octicon-location">Nashville</li>
+             <li class="octicon octicon-mail">daniel.opatich@gmail.com</li>
+             <li class="octicon octicon-link">medium</li>
+             <li class="octicon octicon-clock">Joined</li> -->
+           </ul>
+           <div class="followStats">
+             <!-- <a class="followers">0</a>
+               <span>Followers</span>
+             <a class="starred">0</a>
+               <span>Starred</span>
+             <a class="following">0</a>
+               <span>Following</span> -->
+           </div>
+           <div class="orgs">
+             <!-- <h2>Organizations</h2>
+             <a href="#">gh</a> -->
+           </div>
+         </div>
+       </div>
+       </section>
+ <!-- // left column end // -->
+       <section id="mainColumn">
+         <div class="repoTabs">
+           <a href="#" class="editBtn octicon octicon-pencil">Edit Profile</a>
+           <nav class="tabsNav">
+             <a href="#" class="cont octicon octicon-diff-added">Contributions</a>
+             <a href="#" class="repo octicon octicon-repo">Repositories</a>
+             <a href="#" class="public octicon octicon-rss">Public Activity</a>
+           </nav>
+         </div>
+         <div class="tabsContent">
+           <section class="repos">
+             <div class="repoFilter">
+               <ul class="filterOptions">
+                 <li>
+                   <a href="#">All</a>
+                 </li>
+                 <li>
+                   <a href="#">Public</a>
+                 </li>
+                 <li>
+                   <a href="#">Private</a>
+                 </li>
+                 <li>
+                   <a href="#">Sources</a>
+                 </li>
+                 <li>
+                   <a href="#">Forks</a>
+                 </li>
+                 <li>
+                   <a href="#">Mirrors</a>
+                 </li>
+               </ul>
+               <a href="#" class="new octicon octicon-repo">New</a>
+                 <form class="repoSearch" action="index.html" method="post">
+                   <input class="findRepo" type="text" name="name" value="" placeholder="Find a repository...">
+                   <input type="submit" name="name" value="Search" class="submitBtn">
+                 </form>
+             </div>
+         </section>
+       </div>
+
+  <!-- // main column end // -->
+     </div>
+   </main>
+
+
+    <h1>Repos</h1>
     <div id="app"></div>
 
     <script src="js/bundle.js"></script>
