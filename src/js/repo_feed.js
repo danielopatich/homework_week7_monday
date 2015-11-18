@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import Repo from './repo';
 
 class RepoFeed extends React.Component {
   constructor(props) {
@@ -9,13 +10,11 @@ class RepoFeed extends React.Component {
     }
   }
 
-
   render () {
     let repos = this.props.repos.map(repo =>{
       return (
-        <Repo key={repo.}
-            title={repo.}
-          created={repo.}/>
+        <Repo url={repos.name}
+          created={repos.created_at}/>
       )
     });
     return (

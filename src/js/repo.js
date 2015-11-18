@@ -6,23 +6,23 @@ class Repo extends React.Component {
     super(props);
 
     this.state = {
-      repo: this.props.repo.project
+      repos: this.props.repos.name
     }
   }
 
   render () {
     return (
       <li className="repo-title">
-        <a href="#">{this.props.project}</a>
-        <time className="created-at">{this.props.project.created_at}</time>
+        <a href="#">{this.props.repos.name}</a>
+        <time className="created-at">{this.props.repos.created_at}</time>
       </li>
     )
   }
 }
 
 Repo.defaultProps = {
-  repo: {
-    project: ''
+  repos: {
+    repos: repos.url
   }
 }
 

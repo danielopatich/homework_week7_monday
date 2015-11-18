@@ -3,17 +3,15 @@ import ReactDOM from 'react-dom';
 import jQuery from 'jquery';
 
 import RepoFeed from './repo_feed';
+import $ from "./jQuery";
+
 
 
 class App extends React.Component {
-
-
-
-  getRepos() {
+  componentDidMount() {
     jQuery.ajax('https://api.github.com/users/danielopatich/repos')
       .then( repsonse => {
         this.setState({
-          hasLoaded: true,
           repos: response
         });
       })
@@ -24,7 +22,7 @@ class App extends React.Component {
   render () {
     return (
       <main>
-        <RepoFeed repos={this.state.repos}/>
+        <RepoFeed repos={this.state.repos.url}/>
       </main>
     )
   }
@@ -32,7 +30,7 @@ class App extends React.Component {
 
 
 ReactDOM.render(
-  <RepoFeed />,
+  <RepoFeed/>,
   document.getElementById('app')
 );
 
