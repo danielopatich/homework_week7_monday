@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import jQuery from 'jquery';
+
 import TodoItem from './todo-item';
 
 class TodoList extends React.Component {
@@ -6,15 +8,24 @@ class TodoList extends React.Component {
     super(props);
 
     this.handleCompleted = this.handleCompleted.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
-  handleCompleted() {
-    console.log('called the completed todo function');
-  }
+  handleCompleted(id, event) {
+    let completed = event.target.checked;
+    let options = {
+      url: 'http://tiny-starburst.herokuapp.com/collections/todos/' + id,
+      method: 'PUT',
+      data: {
+        completed: completed
+      }
+    };
 
-  handleUpdate() {
-    console.log('called the update todo function');
+    jQuery.ajax(options);
+
+    this.props.updateTodo({
+      _id: id,
+      completed: completed
+    });
   }
 
   render () {
@@ -23,10 +34,9 @@ class TodoList extends React.Component {
     }
     let todos = this.props.todos.map(todo =>{
       return <TodoItem key={todo._id}
-                 completed={todo.completed}
-                      text={todo.text}
-                    todoId={todo.id}
-              handleUpdate={todo.handleUpdate}/>
+                       todo={todo}
+                       handleCompleted={this.handleCompleted.bind(this, todo._id)}
+                       />
     });
     return (
       <ul>
