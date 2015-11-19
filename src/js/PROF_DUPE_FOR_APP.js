@@ -5,6 +5,7 @@ import jQuery from 'jquery';
 import token from './token'
 
 import RepoFeed from './repo_feed';
+// import ProfileList from './profile_list';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,11 +13,13 @@ class App extends React.Component {
 
     this.state = {
       repos: [],
+      // users: {}
     }
   }
 
   componentDidMount() {
     this.getRepos();
+    // this.getProfile();
   }
 
   getRepos() {
@@ -26,12 +29,22 @@ class App extends React.Component {
           repos: response
         });
       })
-  }
+  } 
+
+  // getProfile() {
+  //   jQuery.ajax('https://api.github.com/users/danielopatich')
+  //     .then( response => {
+  //       this.setState({
+  //         users: response
+  //       });
+  //     })
+  // }
 
   render () {
     return (
       <div className="pageWrap">
         <RepoFeed repos={this.state.repos}/>
+        // <ProfileList users={this.state.users}/>
       </div>
     )
   }

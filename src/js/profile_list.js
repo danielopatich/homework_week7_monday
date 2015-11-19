@@ -14,10 +14,10 @@ class ProfileList extends React.Component {
     let users = this.props.users.map(user =>{
       return (
         <Profile name={user.name}
-            login={user.login}
-          company={user.company}
-         location={user.location}
-          created={user.created_at}/>
+                login={user.login}
+              company={user.company}
+             location={user.location}
+              created={user.created_at}/>
       )
     });
 
