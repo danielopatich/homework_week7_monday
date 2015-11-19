@@ -15,7 +15,9 @@ class RepoFeed extends React.Component {
     let repos = this.props.repos.map(repo =>{
       return (
         <Repo key={repo.id}
-             repo={repo.name}/>
+              url={repo.html_url}
+             repo={repo.name}
+             time={repo.created_at}/>
       )
     });
 
